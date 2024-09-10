@@ -55,8 +55,8 @@ function App() {
             <h2>{plan.title}</h2>
             <p className="price">{plan.price}</p>
             <ol>
-              {plan.features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
+              {plan.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
               ))}
             </ol>
             <button>Subscribe</button>
