@@ -1,62 +1,67 @@
-.price-card-container {
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #3884cf;
+}
+
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+
+.pricing-container {
+  display: flex;
   gap: 20px;
-  padding: 20px;
-  background: #f0f4f7;
 }
 
-.price-card {
-  background: white;
-  border-radius: 10px;
+.pricing-card {
+  background-color: white;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(201, 7, 7, 0.5);
   width: 250px;
+  height: 400px;
+  text-align: left;
 }
 
-.price-card h3 {
-  font-size: 1.2rem;
-  color: #333;
+.pricing-card h2 {
+  font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.price-card h1 {
-  font-size: 2rem;
-  color: #007bff;
+.price {
+  font-size: 40px;
+  color: #d64545;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.pricing-card ul {
+  list-style-type: none;
+  padding: 0;
   margin-bottom: 20px;
 }
 
-.price-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-}
-
-.price-card li {
+.pricing-card ul li {
   margin: 8px 0;
-  color: #777;
 }
 
-.price-card .enabled {
-  color: #333;
-}
-
-.price-card .disabled {
-  color: #ddd;
-  text-decoration: line-through;
-}
-
-.price-card .btn {
+.pricing-card button {
   background-color: #007bff;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0; /* Adds padding vertically and horizontally */
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Makes the button span the full width */
+  margin-top: 20px; /* Adds some space between the button and the list */
 }
 
-.price-card .btn:hover {
+.pricing-card button:hover {
   background-color: #0056b3;
 }

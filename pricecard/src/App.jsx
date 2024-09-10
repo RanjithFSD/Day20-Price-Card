@@ -1,61 +1,70 @@
-import React from "react";
-import PriceCard from "./PriceCard"; // Import the PriceCard component
+import React from 'react';
+import './App.css';
 
-// Data for the price plans
-const plans = [
-  {
-    title: "FREE",
-    price: "$0/month",
-    features: [
-      { name: "Single User", enabled: true },
-      { name: "50GB Storage", enabled: true },
-      { name: "Unlimited Public Projects", enabled: true },
-      { name: "Community Access", enabled: true },
-      { name: "Unlimited Private Projects", enabled: false },
-      { name: "Dedicated Phone Support", enabled: false },
-      { name: "Free Subdomain", enabled: false },
-      { name: "Monthly Status Reports", enabled: false },
-    ],
-  },
-  {
-    title: "PLUS",
-    price: "$9/month",
-    features: [
-      { name: "5 Users", enabled: true },
-      { name: "50GB Storage", enabled: true },
-      { name: "Unlimited Public Projects", enabled: true },
-      { name: "Community Access", enabled: true },
-      { name: "Unlimited Private Projects", enabled: true },
-      { name: "Dedicated Phone Support", enabled: false },
-      { name: "Free Subdomain", enabled: true },
-      { name: "Monthly Status Reports", enabled: false },
-    ],
-  },
-  {
-    title: "PRO",
-    price: "$49/month",
-    features: [
-      { name: "Unlimited Users", enabled: true },
-      { name: "50GB Storage", enabled: true },
-      { name: "Unlimited Public Projects", enabled: true },
-      { name: "Community Access", enabled: true },
-      { name: "Unlimited Private Projects", enabled: true },
-      { name: "Dedicated Phone Support", enabled: true },
-      { name: "Free Subdomain", enabled: true },
-      { name: "Monthly Status Reports", enabled: true },
-    ],
-  },
-];
+function App() {
+  const pricingPlans = [
+    {
+      title: 'FREE',
+      price: '$0/month',
+      features: [
+        'Single User',
+        '50GB Storage',
+        'Unlimited Public Projects',
+        'Community Access',
+        'No Unlimited Private Projects',
+        'No Dedicated Phone Support',
+        'No Free Subdomain',
+        'No Monthly Status Reports',
+      ],
+    },
+    {
+      title: 'PLUS',
+      price: '$9/month',
+      features: [
+        '5 Users',
+        '50GB Storage',
+        'Unlimited Public Projects',
+        'Community Access',
+        'Unlimited Private Projects',
+        'Dedicated Phone Support',
+        'Free Subdomain',
+        'No Monthly Status Reports',
+      ],
+    },
+    {
+      title: 'PRO',
+      price: '$49/month',
+      features: [
+        'Unlimited Users',
+        '50GB Storage',
+        'Unlimited Public Projects',
+        'Community Access',
+        'Unlimited Private Projects',
+        'Dedicated Phone Support',
+        'Free Subdomain',
+        'Monthly Status Reports',
+      ],
+    },
+  ];
 
-// The main App component
-const App = () => {
   return (
-    <div className="price-card-container">
-      {plans.map((plan, index) => (
-        <PriceCard key={index} plan={plan} />
-      ))}
+    <div className="App">
+      <div className="pricing-container">
+        {pricingPlans.map((plan, index) => (
+          <div key={index} className="pricing-card">
+            <h2>{plan.title}</h2>
+            <p className="price">{plan.price}</p>
+            <ol>
+              {plan.features.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ol>
+            <button>Subscribe</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
+}
 
 export default App;
